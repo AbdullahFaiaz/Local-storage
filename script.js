@@ -4,6 +4,8 @@ let showCart = () => {
     const getQ = document.getElementById('product-quantity');
     const valN = getN.value;
     const valQ = getQ.value;
+    valN = '';
+    valQ = '';
     if(valN!== '' || valQ!== ''){
         storeToLocal(valN,valQ);
     }
