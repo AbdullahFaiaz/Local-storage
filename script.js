@@ -1,7 +1,10 @@
-let showCart = () => {
+const addToCart = () => {
     //clear show cache from document:
-    const clrSC = document.getElementById('showCache');
-    clrSC.innerText = '';
+    const clrShowCache = document.getElementById('showCache');
+    clrShowCache.innerText = '';
+    //clear show cart from document:
+    const clrShowCart = document.getElementById('ul');
+    clrShowCart.innerText = '';
 
     const getN = document.getElementById('product-name');
     const getQ = document.getElementById('product-quantity');
@@ -12,7 +15,8 @@ let showCart = () => {
     if(valN!== '' && valQ!== ''){
         storeToLocal(valN,valQ);
     }
-
+}
+const showCart = () => {
     const get = localStorage.getItem('shoppingCart');
     let Get = JSON.parse(get);
     const parent = document.getElementById('ul')
@@ -21,7 +25,6 @@ let showCart = () => {
         const child = document.createElement('li');
         child.innerText = `${i} ${Get[i]} `;
         child.classList.add('bg-green-400','border');
-        parent.appendChild(child);
         parent.appendChild(child);
     }
 
