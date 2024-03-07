@@ -1,4 +1,7 @@
 let showCart = () => {
+    //clear show cache from document:
+    const clrSC = document.getElementById('showCache');
+    clrSC.innerText = '';
 
     const getN = document.getElementById('product-name');
     const getQ = document.getElementById('product-quantity');
@@ -6,7 +9,7 @@ let showCart = () => {
     const valQ = getQ.value;
     getN.value = '';
     getQ.value = '';
-    if(valN!== '' || valQ!== ''){
+    if(valN!== '' && valQ!== ''){
         storeToLocal(valN,valQ);
     }
 
@@ -54,15 +57,14 @@ const storeToLocal = (product,value) => {
     localStorage.setItem('shoppingCart', JSON.stringify(cart));
 }
 
-const clearLS = () => {
-    localStorage.clear()
-}
+
 const removeItem = () => {
     localStorage.removeItem('shoppingCart');
+    showCart();
+    showCache();
 }
 
 const showCache = () => {
-    
     const get = localStorage.getItem('shoppingCart');
     let Get = JSON.parse(get);
     const parent = document.getElementById('showCache');

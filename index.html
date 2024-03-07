@@ -8,15 +8,19 @@
 </head>
 <body class="m-12">
     
-    <input type="text" id="product-name" placeholder="Product Name">
-    <input type="text" id="product-quantity" placeholder="Quantity">
+    <input class="p-1 border-[1px] border-orange-950 border-solid rounded-md" type="text" id="product-name" placeholder="Product Name">
+    <input class="p-1 border-[1px] border-orange-950 border-solid rounded-md" type="text" id="product-quantity" placeholder="Quantity">
     <button class="bg-orange-400 rounded-lg p-2" onclick="showCart()">Add to Cart</button>
-
-    <ul title="Cart" id="ul">
+<br>
+<br>
+    <ul title="Cart">
         <li style="list-style-type: none; font-weight: bold;">Product Name and Quantity</li>
         
+    </ul>
+    <ul title="Cart" id="ul">
+        
     </ul><br>
-    <button class="bg-orange-400 rounded-lg p-2" onclick="clearLS()">Clear Catch</button>
+
     <button class="bg-orange-400 rounded-lg p-2" onclick="removeItem()">Clear Shopping Cart</button>
     <button class="bg-orange-300 rounded-lg p-2" onclick="showCache()">show Cache</button>
     <br>
