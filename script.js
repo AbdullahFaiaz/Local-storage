@@ -10,7 +10,7 @@ const addToCart = () => {
     if(valN!== '' && valQ!== ''){
         storeToLocal(valN,valQ);
     }
-    if(document.getElementById('ul').innerText !== ''){
+    if(document.getElementById('showCart').innerText !== ''){
         showCart()
     }
     if(document.getElementById('showCache').innerText !== ''){
@@ -24,10 +24,14 @@ const toggleShowCart =() => {
     if(!toggle){
         showCart();
         toggle = true;
+        document.getElementById('showCartBtn').style.backgroundColor = 'steelBlue'
     }
     else{
-        const clrShowCart = document.getElementById('ul');
+        document.getElementById('title').classList.add('hidden')
+
+        const clrShowCart = document.getElementById('showCart');
         clrShowCart.innerText = '';
+        document.getElementById('showCartBtn').style.backgroundColor = '#ff9900'
         toggle = false;
     }
 }
@@ -36,23 +40,30 @@ const toggleShowCache =() => {
 
     if(!toggle2){
         showCache();
+        document.getElementById('showCacheBtn').style.backgroundColor = 'steelBlue'
         toggle2 = true;
     }
     else{
         const clrShowCache = document.getElementById('showCache');
         clrShowCache.innerText = '';
+        document.getElementById('showCacheBtn').style.backgroundColor = '#ff9900'
         toggle2 = false;
     }
 }
 
 const showCart = () => {
+    document.getElementById('title').classList.remove('hidden')
+
     const get = localStorage.getItem('shoppingCart');
     let Get = JSON.parse(get);
-    const parent = document.getElementById('ul')
+    const parent = document.getElementById('showCart')
     parent.innerText = '';
     for(let i in Get){
         const child = document.createElement('li');
-        child.innerText = `${i} ${Get[i]} `;
+        child.innerHTML = `
+        <div class= "flex font-medium">
+        <span class="w-[30vw]">${i}:</span> <span class= "font-normal">${Get[i]}</span>
+        </div>   `;
         child.classList.add('bg-green-400','border');
         parent.appendChild(child);
     }

@@ -10,21 +10,21 @@
     
     <input class="p-1 border-[1px] border-orange-950 border-solid rounded-md" type="text" id="product-name" placeholder="Product Name">
     <input class="p-1 border-[1px] border-orange-950 border-solid rounded-md" type="text" id="product-quantity" placeholder="Quantity">
-    <button class="bg-orange-400 rounded-lg p-2" onclick="addToCart()">Add to Cart</button>
-    <button class="bg-orange-400 rounded-lg p-2" onclick="toggleShowCart()">Show Cart</button>
+    <button class="bg-[#ff9900] hover:scale-105 rounded-lg p-2" onclick="addToCart()">Add to Cart</button>
+    <button id="showCartBtn" class="bg-[#ff9900] hover:scale-105 rounded-lg p-2" onclick="toggleShowCart()">Show Cart</button>
 
     <br>
 <br>
-    <ul title="Cart">
-        <li style="list-style-type: none; font-weight: bold;">Product Name and Quantity</li>
+    <ul title="Cart" id="title" class="hidden">
+        <li style="list-style-type: none; text-decoration: underline; font-weight: bold;">Product Name and Quantity</li>
         
     </ul>
-    <ul title="Cart" id="ul">
+    <ul title="Cart" id="showCart">
         
     </ul><br>
 
-    <button class="bg-orange-400 rounded-lg p-2" onclick="removeItem()">Clear Shopping Cart</button>
-    <button class="bg-orange-300 rounded-lg p-2" onclick="toggleShowCache()">show Cache</button>
+    <button class="bg-[#ff9900] hover:scale-105 rounded-lg p-2" onclick="removeItem()">Clear Shopping Cart</button>
+    <button id="showCacheBtn" class="bg-[#ff9900] hover:scale-105 rounded-lg p-2" onclick="toggleShowCache()">show Cache</button>
     <br>
     <div id="showCache"></div>
     <script src="script.js"></script>
