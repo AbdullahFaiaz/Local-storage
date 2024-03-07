@@ -7,7 +7,7 @@ const addToCart = () => {
     const valQ = getQ.value;
     getN.value = '';
     getQ.value = '';
-    if(valN!== '' && valQ!== ''){
+    if(valN && valQ){ //if they are truthy
         storeToLocal(valN,valQ);
     }
     if(document.getElementById('showCart').innerText !== ''){
