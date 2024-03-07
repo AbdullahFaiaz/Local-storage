@@ -1,10 +1,10 @@
 const addToCart = () => {
-    //clear show cache from document:
-    const clrShowCache = document.getElementById('showCache');
-    clrShowCache.innerText = '';
-    //clear show cart from document:
-    const clrShowCart = document.getElementById('ul');
-    clrShowCart.innerText = '';
+    // //clear show cache from document:
+    // const clrShowCache = document.getElementById('showCache');
+    // clrShowCache.innerText = '';
+    // //clear show cart from document:
+    // const clrShowCart = document.getElementById('ul');
+    // clrShowCart.innerText = '';
 
     const getN = document.getElementById('product-name');
     const getQ = document.getElementById('product-quantity');
@@ -15,6 +15,14 @@ const addToCart = () => {
     if(valN!== '' && valQ!== ''){
         storeToLocal(valN,valQ);
     }
+    if(document.getElementById('ul').innerText !== ''){
+        showCart()
+    }
+    if(document.getElementById('showCache').innerText !== ''){
+        showCache()
+    }
+
+    
 }
 const showCart = () => {
     const get = localStorage.getItem('shoppingCart');
