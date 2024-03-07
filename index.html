@@ -11,7 +11,7 @@
     <input class="p-1 border-[1px] border-orange-950 border-solid rounded-md" type="text" id="product-name" placeholder="Product Name">
     <input class="p-1 border-[1px] border-orange-950 border-solid rounded-md" type="text" id="product-quantity" placeholder="Quantity">
     <button class="bg-orange-400 rounded-lg p-2" onclick="addToCart()">Add to Cart</button>
-    <button class="bg-orange-400 rounded-lg p-2" onclick="showCart()">Show Cart</button>
+    <button class="bg-orange-400 rounded-lg p-2" onclick="toggleShowCart()">Show Cart</button>
 
     <br>
 <br>
@@ -24,7 +24,7 @@
     </ul><br>
 
     <button class="bg-orange-400 rounded-lg p-2" onclick="removeItem()">Clear Shopping Cart</button>
-    <button class="bg-orange-300 rounded-lg p-2" onclick="showCache()">show Cache</button>
+    <button class="bg-orange-300 rounded-lg p-2" onclick="toggleShowCache()">show Cache</button>
     <br>
     <div id="showCache"></div>
     <script src="script.js"></script>

@@ -1,11 +1,6 @@
+let toggle = false;
+let toggle2 = false;
 const addToCart = () => {
-    // //clear show cache from document:
-    // const clrShowCache = document.getElementById('showCache');
-    // clrShowCache.innerText = '';
-    // //clear show cart from document:
-    // const clrShowCart = document.getElementById('ul');
-    // clrShowCart.innerText = '';
-
     const getN = document.getElementById('product-name');
     const getQ = document.getElementById('product-quantity');
     const valN = getN.value;
@@ -24,6 +19,32 @@ const addToCart = () => {
 
     
 }
+const toggleShowCart =() => {
+
+    if(!toggle){
+        showCart();
+        toggle = true;
+    }
+    else{
+        const clrShowCart = document.getElementById('ul');
+        clrShowCart.innerText = '';
+        toggle = false;
+    }
+}
+
+const toggleShowCache =() => {
+
+    if(!toggle2){
+        showCache();
+        toggle2 = true;
+    }
+    else{
+        const clrShowCache = document.getElementById('showCache');
+        clrShowCache.innerText = '';
+        toggle2 = false;
+    }
+}
+
 const showCart = () => {
     const get = localStorage.getItem('shoppingCart');
     let Get = JSON.parse(get);
